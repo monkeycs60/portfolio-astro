@@ -11,7 +11,7 @@ const work = [
     name: "Affilae",
     role: "Fullstack Developer & AI Consultant",
     period: "Feb 2024 → Present",
-    description: "Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch. Developed mobile app features and redesigned the entire mobile dashboard. Currently building an intelligent matching system for the marketplace. Introduced AI tools company-wide and building internal RAG documentation system.",
+    description: "Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch. Developed mobile app features. Currently building an intelligent matching system for the marketplace. Introduced AI tools company-wide and building internal RAG documentation system.",
     url: "https://affilae.com",
     tags: ["React", "React Native", "Node.js", "AI Training", "RAG"],
     badge: "Full-time",
@@ -20,6 +20,7 @@ const work = [
   {
     name: "Recall People",
     role: "Founder",
+    year: "2026",
     description: "Personal CRM with voice-to-contact cards. AI-powered summaries, auto-organization, smart search, and event reminders.",
     url: "https://recall-people-2026.vercel.app",
     tags: ["React Native", "Expo", "Deepgram", "Cloudflare Workers", "AI"],
@@ -27,17 +28,9 @@ const work = [
     badgeColor: "bg-green-500/20 text-green-400"
   },
   {
-    name: "Coworker Malin",
-    role: "Founder",
-    description: "Community platform to discover and share free coworking spots. AI moderation for chat and content validation.",
-    url: "https://www.coworkermalin.com",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "AI Moderation"],
-    badge: "Founder",
-    badgeColor: "bg-green-500/20 text-green-400"
-  },
-  {
     name: "CardioWatch",
     role: "Founder",
+    year: "2025",
     description: "Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries and auto-generated podcasts.",
     url: "https://mediceye-web.vercel.app",
     tags: ["Next.js", "TypeScript", "AI Summaries", "TTS"],
@@ -47,19 +40,38 @@ const work = [
   {
     name: "Larib Portal",
     role: "Lead Developer",
+    year: "2025",
     description: "Multi-app portal for cardiology lab management. Includes scheduling, administration tools, and training platform for medical students.",
     url: "https://www.cardiolarib-portal.com",
     tags: ["Next.js", "TypeScript", "Auth", "Multi-tenant"],
     badge: "Freelance",
     badgeColor: "bg-amber-500/20 text-amber-400"
+  },
+  {
+    name: "Coworker Malin",
+    role: "Founder",
+    year: "2024",
+    description: "Community platform to discover and share free coworking spots. AI moderation for chat and content validation.",
+    url: "https://www.coworkermalin.com",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "AI Moderation"],
+    badge: "Founder",
+    badgeColor: "bg-green-500/20 text-green-400"
   }
 ];
 
-const techStack = {
-  "Frontend": ["React", "React Native", "Next.js", "TypeScript", "Tailwind CSS"],
-  "Backend": ["Node.js", "Hono", "Cloudflare Workers", "PostgreSQL", "Prisma"],
-  "AI & Tools": ["Claude Code", "RAG Systems", "LLM Integration", "n8n", "OpenClaw"]
-};
+const techILove = [
+  { name: "Claude Code", why: "The best AI coding assistant, period" },
+  { name: "React Native", why: "One codebase, two platforms, no compromises" },
+  { name: "Next.js", why: "Full-stack React that just works" },
+  { name: "TypeScript", why: "JavaScript that scales" },
+  { name: "Tailwind CSS", why: "Ship fast without fighting CSS" },
+  { name: "Hono", why: "Ultra-fast, works everywhere" },
+  { name: "Cloudflare Workers", why: "Edge computing made simple" },
+  { name: "PostgreSQL", why: "The database I always come back to" },
+  { name: "Prisma", why: "Type-safe database access" },
+  { name: "n8n", why: "Automation without vendor lock-in" },
+  { name: "OpenClaw", why: "AI assistant that actually does stuff" }
+];
 
 const links = [
   { name: "GitHub", url: "https://github.com/monkeycs60" },
@@ -90,9 +102,7 @@ const links = [
       <p class="text-sm text-neutral-500 mb-6">Based in Bordeaux, France</p>
       
       <p class="text-neutral-300 mb-8 leading-relaxed">
-        I build AI-powered apps and workflows that make teams faster and smarter. 
-        Currently at <a href="https://affilae.com" class="text-purple-400 hover:text-purple-300 underline underline-offset-4" target="_blank" rel="noopener noreferrer">Affilae</a>, 
-        combining fullstack expertise with LLM integration and training teams on AI tools.
+        I build AI-powered apps and workflows that make teams faster and smarter.
       </p>
       
       <!-- Social Links -->
@@ -126,7 +136,7 @@ const links = [
     <nav class="mb-16 text-sm text-neutral-500 flex gap-6">
       <a href="#work" class="hover:text-white transition-colors">Work</a>
       <span>/</span>
-      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+      <a href="#tech" class="hover:text-white transition-colors">Tech I love</a>
       <span>/</span>
       <a href="#contact" class="hover:text-white transition-colors">Contact</a>
     </nav>
@@ -155,6 +165,7 @@ const links = [
             <p class="text-sm text-neutral-500 mb-2">
               {item.role}
               {item.period && <span class="text-neutral-600"> · {item.period}</span>}
+              {item.year && <span class="text-neutral-600"> · {item.year}</span>}
             </p>
             <p class="text-neutral-400 mb-3">{item.description}</p>
             <div class="flex flex-wrap gap-2">
@@ -169,24 +180,19 @@ const links = [
       </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="stack" class="mb-20">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Stack</h2>
+    <!-- Tech I Love -->
+    <section id="tech" class="mb-20">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Tech I love</h2>
       
-      <div class="space-y-6">
-        {Object.entries(techStack).map(([category, items]) => (
-          <div>
-            <h3 class="text-sm text-neutral-500 mb-2">{category}</h3>
-            <div class="flex flex-wrap gap-2">
-              {items.map(item => (
-                <span class="text-sm text-neutral-300 bg-neutral-800 px-3 py-1.5 rounded-lg">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
+      <ul class="space-y-3">
+        {techILove.map(tech => (
+          <li class="flex items-baseline gap-2">
+            <span class="text-white font-medium">{tech.name}</span>
+            <span class="text-neutral-600">—</span>
+            <span class="text-neutral-400 italic">{tech.why}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
 
     <!-- Contact -->
