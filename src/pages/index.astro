@@ -1,9 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const projects = [
+const currentlyBuilding = [
+  "Intelligent matching system for Affilae's marketplace",
+  "Recall People — launching on App Store soon"
+];
+
+const work = [
+  {
+    name: "Affilae",
+    role: "Fullstack Developer & AI Consultant",
+    period: "Feb 2024 → Present",
+    description: "Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch. Developed mobile app features and redesigned the entire mobile dashboard. Currently building an intelligent matching system for the marketplace. Introduced AI tools company-wide and building internal RAG documentation system.",
+    url: "https://affilae.com",
+    tags: ["React", "React Native", "Node.js", "AI Training", "RAG"],
+    badge: "Full-time",
+    badgeColor: "bg-blue-500/20 text-blue-400"
+  },
   {
     name: "Recall People",
+    role: "Founder",
     description: "Personal CRM with voice-to-contact cards. AI-powered summaries, auto-organization, smart search, and event reminders.",
     url: "https://recall-people-2026.vercel.app",
     tags: ["React Native", "Expo", "Deepgram", "Cloudflare Workers", "AI"],
@@ -12,6 +28,7 @@ const projects = [
   },
   {
     name: "Coworker Malin",
+    role: "Founder",
     description: "Community platform to discover and share free coworking spots. AI moderation for chat and content validation.",
     url: "https://www.coworkermalin.com",
     tags: ["Next.js", "Node.js", "PostgreSQL", "AI Moderation"],
@@ -20,6 +37,7 @@ const projects = [
   },
   {
     name: "CardioWatch",
+    role: "Founder",
     description: "Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries and auto-generated podcasts.",
     url: "https://mediceye-web.vercel.app",
     tags: ["Next.js", "TypeScript", "AI Summaries", "TTS"],
@@ -28,22 +46,12 @@ const projects = [
   },
   {
     name: "Larib Portal",
+    role: "Lead Developer",
     description: "Multi-app portal for cardiology lab management. Includes scheduling, administration tools, and training platform for medical students.",
     url: "https://www.cardiolarib-portal.com",
     tags: ["Next.js", "TypeScript", "Auth", "Multi-tenant"],
     badge: "Freelance",
     badgeColor: "bg-amber-500/20 text-amber-400"
-  }
-];
-
-const experience = [
-  {
-    role: "Fullstack Developer & AI Consultant",
-    company: "Affilae",
-    period: "Feb 2024 → Present",
-    description: "Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch with modern stack. Developed mobile app features and redesigned the entire mobile dashboard. Currently building an intelligent matching system for the marketplace. Introduced AI tools company-wide and building internal RAG documentation system.",
-    url: "https://affilae.com",
-    tags: ["React", "React Native", "Node.js", "AI Training", "RAG"]
   }
 ];
 
@@ -78,7 +86,8 @@ const links = [
       <h1 class="text-4xl md:text-5xl font-bold mb-2">
         <span class="text-purple-400">Clément</span> Serizay
       </h1>
-      <p class="text-xl text-neutral-400 mb-6">AI-Augmented Fullstack Dev</p>
+      <p class="text-xl text-neutral-400 mb-1">AI-Augmented Fullstack Dev</p>
+      <p class="text-sm text-neutral-500 mb-6">Based in Bordeaux, France</p>
       
       <p class="text-neutral-300 mb-8 leading-relaxed">
         I build AI-powered apps and workflows that make teams faster and smarter. 
@@ -101,71 +110,55 @@ const links = [
       </div>
     </header>
 
+    <!-- Currently Building -->
+    <section class="mb-16 p-4 bg-neutral-900/50 border border-neutral-800 rounded-lg">
+      <h2 class="text-sm font-medium text-purple-400 mb-3">Currently building</h2>
+      <ul class="space-y-1">
+        {currentlyBuilding.map(item => (
+          <li class="text-neutral-400 text-sm flex items-center gap-2">
+            <span class="text-purple-400">→</span> {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
     <!-- Navigation -->
     <nav class="mb-16 text-sm text-neutral-500 flex gap-6">
-      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-      <span>/</span>
-      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+      <a href="#work" class="hover:text-white transition-colors">Work</a>
       <span>/</span>
       <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+      <span>/</span>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
     </nav>
 
-    <!-- Projects -->
-    <section id="projects" class="mb-20">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Projects</h2>
+    <!-- Work -->
+    <section id="work" class="mb-20">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Work</h2>
       
-      <div class="space-y-8">
-        {projects.map(project => (
+      <div class="space-y-10">
+        {work.map(item => (
           <article class="group">
-            <div class="flex items-start justify-between mb-2">
+            <div class="flex items-start justify-between mb-1">
               <a 
-                href={project.url}
+                href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-lg font-medium text-white hover:text-purple-400 transition-colors"
               >
-                {project.name}
+                {item.name}
                 <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
               </a>
-              <span class={`text-xs px-2 py-1 rounded-full ${project.badgeColor}`}>
-                {project.badge}
+              <span class={`text-xs px-2 py-1 rounded-full ${item.badgeColor}`}>
+                {item.badge}
               </span>
             </div>
-            <p class="text-neutral-400 mb-3">{project.description}</p>
+            <p class="text-sm text-neutral-500 mb-2">
+              {item.role}
+              {item.period && <span class="text-neutral-600"> · {item.period}</span>}
+            </p>
+            <p class="text-neutral-400 mb-3">{item.description}</p>
             <div class="flex flex-wrap gap-2">
-              {project.tags.map(tag => (
-                <span class="text-xs text-neutral-500 bg-neutral-800/50 px-2 py-1 rounded">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="mb-20">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Experience</h2>
-      
-      <div class="space-y-8">
-        {experience.map(job => (
-          <article class="border-l-2 border-neutral-800 pl-6">
-            <div class="flex items-baseline justify-between mb-1">
-              <h3 class="text-lg font-medium text-white">{job.role}</h3>
-              <span class="text-sm text-neutral-500">{job.period}</span>
-            </div>
-            <a 
-              href={job.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-purple-400 hover:text-purple-300 text-sm mb-3 inline-block"
-            >
-              {job.company} ↗
-            </a>
-            <p class="text-neutral-400 mb-3">{job.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {job.tags.map(tag => (
+              {item.tags.map(tag => (
                 <span class="text-xs text-neutral-500 bg-neutral-800/50 px-2 py-1 rounded">
                   {tag}
                 </span>
@@ -178,7 +171,7 @@ const links = [
 
     <!-- Tech Stack -->
     <section id="stack" class="mb-20">
-      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Tech Stack</h2>
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Stack</h2>
       
       <div class="space-y-6">
         {Object.entries(techStack).map(([category, items]) => (
@@ -197,7 +190,7 @@ const links = [
     </section>
 
     <!-- Contact -->
-    <section class="mb-16">
+    <section id="contact" class="mb-16">
       <h2 class="text-2xl font-semibold text-purple-400 mb-4">Get in touch</h2>
       <a 
         href="mailto:clement.serizay@gmail.com"
@@ -210,12 +203,21 @@ const links = [
     <!-- Footer -->
     <footer class="pt-8 border-t border-neutral-800 text-sm text-neutral-600 flex justify-between items-center">
       <p>© 2026 Clément Serizay</p>
-      <a 
-        href="mailto:clement.serizay@gmail.com"
-        class="text-neutral-500 hover:text-neutral-300 transition-colors"
-      >
-        clement.serizay@gmail.com
-      </a>
+      <div class="flex gap-4">
+        <a 
+          href="/CV.pdf"
+          target="_blank"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors"
+        >
+          CV
+        </a>
+        <a 
+          href="mailto:clement.serizay@gmail.com"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors"
+        >
+          clement.serizay@gmail.com
+        </a>
+      </div>
     </footer>
 
   </div>
