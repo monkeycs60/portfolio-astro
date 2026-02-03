@@ -4,15 +4,15 @@ import Layout from '../layouts/Layout.astro';
 const projects = [
   {
     name: "Recall People",
-    description: "Personal CRM with voice-to-contact cards. AI-powered summaries, auto-organization, and smart search.",
+    description: "Personal CRM with voice-to-contact cards. AI-powered summaries, auto-organization, smart search, and event reminders.",
     url: "https://recall-people-2026.vercel.app",
     tags: ["React Native", "Expo", "Deepgram", "Cloudflare Workers", "AI"],
-    badge: "Side Project",
-    badgeColor: "bg-purple-500/20 text-purple-400"
+    badge: "Founder",
+    badgeColor: "bg-green-500/20 text-green-400"
   },
   {
     name: "Coworker Malin",
-    description: "Community platform to discover free coworking spots. AI moderation and content validation.",
+    description: "Community platform to discover and share free coworking spots. AI moderation for chat and content validation.",
     url: "https://www.coworkermalin.com",
     tags: ["Next.js", "Node.js", "PostgreSQL", "AI Moderation"],
     badge: "Founder",
@@ -20,17 +20,17 @@ const projects = [
   },
   {
     name: "CardioWatch",
-    description: "Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries.",
+    description: "Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries and auto-generated podcasts.",
     url: "https://mediceye-web.vercel.app",
-    tags: ["Next.js", "TypeScript", "AI Summaries"],
-    badge: "Freelance",
-    badgeColor: "bg-amber-500/20 text-amber-400"
+    tags: ["Next.js", "TypeScript", "AI Summaries", "TTS"],
+    badge: "Founder",
+    badgeColor: "bg-green-500/20 text-green-400"
   },
   {
     name: "Larib Portal",
-    description: "Private portal for a cardiology laboratory. Secure access and medical data management.",
+    description: "Multi-app portal for cardiology lab management. Includes scheduling, administration tools, and training platform for medical students.",
     url: "https://www.cardiolarib-portal.com",
-    tags: ["Next.js", "TypeScript", "Auth"],
+    tags: ["Next.js", "TypeScript", "Auth", "Multi-tenant"],
     badge: "Freelance",
     badgeColor: "bg-amber-500/20 text-amber-400"
   }
@@ -41,7 +41,7 @@ const experience = [
     role: "Fullstack Developer & AI Consultant",
     company: "Affilae",
     period: "Feb 2024 → Present",
-    description: "Leading affiliate marketing platform in France (20K+ publishers). Redesigned dashboard & reporting, built mobile app features, introduced AI tools across the company, building internal RAG documentation system.",
+    description: "Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch with modern stack. Developed mobile app features and redesigned the entire mobile dashboard. Currently building an intelligent matching system for the marketplace. Introduced AI tools company-wide and building internal RAG documentation system.",
     url: "https://affilae.com",
     tags: ["React", "React Native", "Node.js", "AI Training", "RAG"]
   }
@@ -50,7 +50,7 @@ const experience = [
 const techStack = {
   "Frontend": ["React", "React Native", "Next.js", "TypeScript", "Tailwind CSS"],
   "Backend": ["Node.js", "Hono", "Cloudflare Workers", "PostgreSQL", "Prisma"],
-  "AI & Tools": ["RAG Systems", "LLM Integration", "Cursor", "Claude Code", "Copilot"]
+  "AI & Tools": ["Claude Code", "RAG Systems", "LLM Integration", "n8n", "OpenClaw"]
 };
 
 const links = [
@@ -103,7 +103,7 @@ const links = [
 
     <!-- Navigation -->
     <nav class="mb-16 text-sm text-neutral-500 flex gap-6">
-      <a href="#projects" class="hover:text-white transition-colors">← Projects</a>
+      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
       <span>/</span>
       <a href="#experience" class="hover:text-white transition-colors">Experience</a>
       <span>/</span>
