@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    name: "Recall People",
+    description: "Personal CRM with voice-to-contact cards. AI-powered summaries, auto-organization, and smart search.",
+    url: "https://recall-people-2026.vercel.app",
+    tags: ["React Native", "Expo", "Deepgram", "Cloudflare Workers", "AI"],
+    badge: "Side Project",
+    badgeColor: "bg-purple-500/20 text-purple-400"
+  },
+  {
+    name: "Coworker Malin",
+    description: "Community platform to discover free coworking spots. AI moderation and content validation.",
+    url: "https://www.coworkermalin.com",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "AI Moderation"],
+    badge: "Founder",
+    badgeColor: "bg-green-500/20 text-green-400"
+  },
+  {
+    name: "CardioWatch",
+    description: "Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries.",
+    url: "https://mediceye-web.vercel.app",
+    tags: ["Next.js", "TypeScript", "AI Summaries"],
+    badge: "Freelance",
+    badgeColor: "bg-amber-500/20 text-amber-400"
+  },
+  {
+    name: "Larib Portal",
+    description: "Private portal for a cardiology laboratory. Secure access and medical data management.",
+    url: "https://www.cardiolarib-portal.com",
+    tags: ["Next.js", "TypeScript", "Auth"],
+    badge: "Freelance",
+    badgeColor: "bg-amber-500/20 text-amber-400"
+  }
+];
+
+const experience = [
+  {
+    role: "Fullstack Developer & AI Consultant",
+    company: "Affilae",
+    period: "Feb 2024 → Present",
+    description: "Leading affiliate marketing platform in France (20K+ publishers). Redesigned dashboard & reporting, built mobile app features, introduced AI tools across the company, building internal RAG documentation system.",
+    url: "https://affilae.com",
+    tags: ["React", "React Native", "Node.js", "AI Training", "RAG"]
+  }
+];
+
+const techStack = {
+  "Frontend": ["React", "React Native", "Next.js", "TypeScript", "Tailwind CSS"],
+  "Backend": ["Node.js", "Hono", "Cloudflare Workers", "PostgreSQL", "Prisma"],
+  "AI & Tools": ["RAG Systems", "LLM Integration", "Cursor", "Claude Code", "Copilot"]
+};
+
+const links = [
+  { name: "GitHub", url: "https://github.com/monkeycs60" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/clement-serizay" },
+  { name: "Twitter", url: "https://twitter.com/clementserizay" },
+  { name: "Email", url: "mailto:clement.serizay@gmail.com" }
+];
+---
+
+<Layout>
+  <div class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+    
+    <!-- Hero -->
+    <header class="mb-16">
+      <!-- Photo -->
+      <div class="mb-6">
+        <img 
+          src="/photo.png" 
+          alt="Clément Serizay" 
+          class="w-20 h-20 rounded-full object-cover border-2 border-neutral-700"
+        />
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">
+        <span class="text-purple-400">Clément</span> Serizay
+      </h1>
+      <p class="text-xl text-neutral-400 mb-6">AI-Augmented Fullstack Dev</p>
+      
+      <p class="text-neutral-300 mb-8 leading-relaxed">
+        I build AI-powered apps and workflows that make teams faster and smarter. 
+        Currently at <a href="https://affilae.com" class="text-purple-400 hover:text-purple-300 underline underline-offset-4" target="_blank" rel="noopener noreferrer">Affilae</a>, 
+        combining fullstack expertise with LLM integration and training teams on AI tools.
+      </p>
+      
+      <!-- Social Links -->
+      <div class="flex gap-3">
+        {links.map(link => (
+          <a 
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-neutral-800 hover:bg-neutral-700 rounded-lg text-sm text-neutral-300 hover:text-white transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="mb-16 text-sm text-neutral-500 flex gap-6">
+      <a href="#projects" class="hover:text-white transition-colors">← Projects</a>
+      <span>/</span>
+      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+      <span>/</span>
+      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+    </nav>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-20">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Projects</h2>
+      
+      <div class="space-y-8">
+        {projects.map(project => (
+          <article class="group">
+            <div class="flex items-start justify-between mb-2">
+              <a 
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-lg font-medium text-white hover:text-purple-400 transition-colors"
+              >
+                {project.name}
+                <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              </a>
+              <span class={`text-xs px-2 py-1 rounded-full ${project.badgeColor}`}>
+                {project.badge}
+              </span>
+            </div>
+            <p class="text-neutral-400 mb-3">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="text-xs text-neutral-500 bg-neutral-800/50 px-2 py-1 rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="mb-20">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Experience</h2>
+      
+      <div class="space-y-8">
+        {experience.map(job => (
+          <article class="border-l-2 border-neutral-800 pl-6">
+            <div class="flex items-baseline justify-between mb-1">
+              <h3 class="text-lg font-medium text-white">{job.role}</h3>
+              <span class="text-sm text-neutral-500">{job.period}</span>
+            </div>
+            <a 
+              href={job.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-purple-400 hover:text-purple-300 text-sm mb-3 inline-block"
+            >
+              {job.company} ↗
+            </a>
+            <p class="text-neutral-400 mb-3">{job.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {job.tags.map(tag => (
+                <span class="text-xs text-neutral-500 bg-neutral-800/50 px-2 py-1 rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="stack" class="mb-20">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-8">Tech Stack</h2>
+      
+      <div class="space-y-6">
+        {Object.entries(techStack).map(([category, items]) => (
+          <div>
+            <h3 class="text-sm text-neutral-500 mb-2">{category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {items.map(item => (
+                <span class="text-sm text-neutral-300 bg-neutral-800 px-3 py-1.5 rounded-lg">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-purple-400 mb-4">Get in touch</h2>
+      <a 
+        href="mailto:clement.serizay@gmail.com"
+        class="text-white hover:text-purple-400 underline underline-offset-4 transition-colors"
+      >
+        clement.serizay@gmail.com
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-8 border-t border-neutral-800 text-sm text-neutral-600 flex justify-between items-center">
+      <p>© 2026 Clément Serizay</p>
+      <a 
+        href="mailto:clement.serizay@gmail.com"
+        class="text-neutral-500 hover:text-neutral-300 transition-colors"
+      >
+        clement.serizay@gmail.com
+      </a>
+    </footer>
+
+  </div>
+</Layout>
