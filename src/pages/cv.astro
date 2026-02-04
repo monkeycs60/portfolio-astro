@@ -314,6 +314,58 @@
         display: none;
       }
     }
+    
+    /* Mobile responsive */
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 20px;
+      }
+      
+      header {
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .header-left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .name {
+        font-size: 26px;
+      }
+      
+      .contact {
+        text-align: center;
+        width: 100%;
+      }
+      
+      .contact div {
+        margin-bottom: 6px;
+      }
+      
+      .item-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .two-cols {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .download-btn {
+        top: 12px;
+        right: 12px;
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
