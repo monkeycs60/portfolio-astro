@@ -31,7 +31,7 @@
     .page {
       max-width: 800px;
       margin: 0 auto;
-      padding: 48px;
+      padding: 40px 48px;
       min-height: 100vh;
     }
     
@@ -40,9 +40,23 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 40px;
-      padding-bottom: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
       border-bottom: 1px solid #262626;
+    }
+    
+    .header-left {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    
+    .photo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #404040;
     }
     
     .name {
@@ -88,21 +102,21 @@
     
     /* Sections */
     section {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
     
     h2 {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: #a78bfa;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     
     /* Experience & Projects */
     .item {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     
     .item:last-child {
@@ -141,8 +155,8 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
+      gap: 5px;
+      margin-top: 6px;
     }
     
     .tag {
@@ -169,7 +183,7 @@
     .two-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 24px;
     }
     
     /* Languages */
@@ -318,14 +332,17 @@
   <div class="page">
     
     <header>
-      <div>
-        <h1 class="name"><span>Clément</span> Serizay</h1>
-        <p class="title">AI-Augmented Fullstack Developer</p>
-        <p class="location">Bordeaux, France</p>
+      <div class="header-left">
+        <img src="/photo.png" alt="Clément Serizay" class="photo" />
+        <div>
+          <h1 class="name"><span>Clément</span> Serizay</h1>
+          <p class="title">AI-Augmented Fullstack Developer</p>
+          <p class="location">31 y/o · Bordeaux, France</p>
+        </div>
       </div>
       <div class="contact">
         <div><a href="mailto:clement.serizay@gmail.com">clement.serizay@gmail.com</a></div>
-        <div>+33 6 47 11 76 23</div>
+        <div>+33 6 80 04 09 35</div>
         <div><a href="https://github.com/monkeycs60">github.com/monkeycs60</a></div>
         <div><a href="https://linkedin.com/in/clement-serizay">linkedin.com/in/clement-serizay</a></div>
       </div>
