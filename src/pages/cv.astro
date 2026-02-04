@@ -223,9 +223,46 @@
       size: A4;
       margin: 0;
     }
+    
+    /* Download button */
+    .download-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background: #a78bfa;
+      color: #0a0a0a;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .download-btn:hover {
+      background: #c4b5fd;
+    }
+    
+    @media print {
+      .download-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
+  <button class="download-btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Download PDF
+  </button>
   <div class="page">
     
     <header>
@@ -250,7 +287,7 @@
           <span class="item-title">Affilae</span>
           <span class="item-meta">Feb 2024 → Present</span>
         </div>
-        <p class="item-subtitle">Fullstack Developer & AI Consultant</p>
+        <p class="item-subtitle">Fullstack Developer & AI Ambassador</p>
         <p class="item-description">
           Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch. 
           Developed mobile app features with React Native. Building intelligent matching system for marketplace. 
@@ -334,20 +371,14 @@
     </section>
 
     <section>
-      <h2>Skills</h2>
+      <h2>Soft Skills & Interests</h2>
       <div class="skills-grid">
-        <span class="skill">React</span>
-        <span class="skill">React Native</span>
-        <span class="skill">TypeScript</span>
-        <span class="skill">Next.js</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">Tailwind CSS</span>
-        <span class="skill">PostgreSQL</span>
-        <span class="skill">Prisma</span>
-        <span class="skill">Cloudflare Workers</span>
-        <span class="skill">AI Integration</span>
-        <span class="skill">RAG Systems</span>
-        <span class="skill">n8n</span>
+        <span class="skill">Tech Archeologist</span>
+        <span class="skill">Reddit Power User</span>
+        <span class="skill">AI Tools Enthusiast</span>
+        <span class="skill">Cycling</span>
+        <span class="skill">Philosophy</span>
+        <span class="skill">Personal Finance</span>
       </div>
     </section>
 
