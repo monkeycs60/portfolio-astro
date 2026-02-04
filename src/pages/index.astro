@@ -203,12 +203,11 @@ const links = [
     <section id="takes" class="mb-20">
       <h2 class="text-2xl font-semibold text-purple-400 mb-8">Hot takes</h2>
       
-      <div class="space-y-4">
+      <div class="space-y-5">
         {hotTakes.map(tech => (
-          <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
-            <span class="text-white font-medium shrink-0">{tech.name}</span>
-            <span class="hidden sm:inline text-neutral-700">—</span>
-            <span class="text-neutral-500 italic">{tech.take}</span>
+          <div>
+            <span class="text-white font-medium">{tech.name}</span>
+            <p class="text-neutral-500 italic mt-0.5">{tech.take}</p>
           </div>
         ))}
       </div>
