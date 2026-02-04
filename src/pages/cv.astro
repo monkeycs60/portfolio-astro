@@ -1,0 +1,390 @@
+---
+// CV Page - Printable dark mode CV
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Clément Serizay</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #262626;
+    }
+    
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    
+    .name span {
+      color: #a78bfa;
+    }
+    
+    .title {
+      font-size: 16px;
+      color: #a3a3a3;
+      margin-bottom: 4px;
+    }
+    
+    .location {
+      font-size: 13px;
+      color: #737373;
+    }
+    
+    .contact {
+      text-align: right;
+      font-size: 13px;
+      color: #a3a3a3;
+    }
+    
+    .contact a {
+      color: #a3a3a3;
+      text-decoration: none;
+    }
+    
+    .contact a:hover {
+      color: #a78bfa;
+    }
+    
+    .contact div {
+      margin-bottom: 4px;
+    }
+    
+    /* Sections */
+    section {
+      margin-bottom: 32px;
+    }
+    
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    
+    /* Experience & Projects */
+    .item {
+      margin-bottom: 20px;
+    }
+    
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    
+    .item-title {
+      font-weight: 600;
+      color: #fff;
+    }
+    
+    .item-meta {
+      font-size: 13px;
+      color: #737373;
+    }
+    
+    .item-subtitle {
+      font-size: 13px;
+      color: #a3a3a3;
+      margin-bottom: 6px;
+    }
+    
+    .item-description {
+      color: #a3a3a3;
+      font-size: 13px;
+    }
+    
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    
+    .tag {
+      font-size: 11px;
+      color: #737373;
+      background: #171717;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    
+    .skill {
+      font-size: 13px;
+      color: #a3a3a3;
+    }
+    
+    /* Two columns */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    
+    /* Languages */
+    .lang {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    
+    .lang-name {
+      color: #e5e5e5;
+    }
+    
+    .lang-level {
+      color: #737373;
+      font-size: 13px;
+    }
+    
+    /* Education */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+    
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .edu-title {
+      font-weight: 500;
+      color: #e5e5e5;
+      font-size: 13px;
+    }
+    
+    .edu-meta {
+      font-size: 12px;
+      color: #737373;
+    }
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: #0a0a0a;
+      }
+      
+      .page {
+        padding: 32px;
+      }
+    }
+    
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    
+    <header>
+      <div>
+        <h1 class="name"><span>Clément</span> Serizay</h1>
+        <p class="title">AI-Augmented Fullstack Developer</p>
+        <p class="location">Bordeaux, France</p>
+      </div>
+      <div class="contact">
+        <div><a href="mailto:clement.serizay@gmail.com">clement.serizay@gmail.com</a></div>
+        <div>+33 6 47 11 76 23</div>
+        <div><a href="https://github.com/monkeycs60">github.com/monkeycs60</a></div>
+        <div><a href="https://linkedin.com/in/clement-serizay">linkedin.com/in/clement-serizay</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Experience</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Affilae</span>
+          <span class="item-meta">Feb 2024 → Present</span>
+        </div>
+        <p class="item-subtitle">Fullstack Developer & AI Consultant</p>
+        <p class="item-description">
+          Leading affiliate marketing platform in France (20K+ publishers). Rebuilt dashboard & reporting from scratch. 
+          Developed mobile app features with React Native. Building intelligent matching system for marketplace. 
+          Introduced AI tools company-wide and developing internal RAG documentation system.
+        </p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">AI Integration</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Recall People</span>
+          <span class="item-meta">2026 · Founder</span>
+        </div>
+        <p class="item-description">
+          Personal CRM with voice-to-contact cards. AI-powered transcription, auto-organization, smart search, and event reminders. Launching on App Store.
+        </p>
+        <div class="tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">Deepgram</span>
+          <span class="tag">Cloudflare Workers</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">CardioWatch</span>
+          <span class="item-meta">2025 · Founder</span>
+        </div>
+        <p class="item-description">
+          Medical literature monitoring for cardiologists. 2900+ articles with AI-powered summaries and auto-generated podcasts.
+        </p>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">AI Summaries</span>
+          <span class="tag">TTS</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Larib Portal</span>
+          <span class="item-meta">2025 · Lead Developer</span>
+        </div>
+        <p class="item-description">
+          Multi-app portal for cardiology lab. Scheduling, administration tools, and training platform for medical students.
+        </p>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Multi-tenant</span>
+          <span class="tag">Auth</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Coworker Malin</span>
+          <span class="item-meta">2024 · Founder</span>
+        </div>
+        <p class="item-description">
+          Community platform to discover and share free coworking spots. AI moderation for chat and content validation.
+        </p>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">AI Moderation</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="skill">React</span>
+        <span class="skill">React Native</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">Next.js</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Tailwind CSS</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">Prisma</span>
+        <span class="skill">Cloudflare Workers</span>
+        <span class="skill">AI Integration</span>
+        <span class="skill">RAG Systems</span>
+        <span class="skill">n8n</span>
+      </div>
+    </section>
+
+    <div class="two-cols">
+      <section>
+        <h2>Languages</h2>
+        <div class="lang">
+          <span class="lang-name">French</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang">
+          <span class="lang-name">English</span>
+          <span class="lang-level">C2 · TOEFL 101/120</span>
+        </div>
+        <div class="lang">
+          <span class="lang-name">Spanish</span>
+          <span class="lang-level">B2</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <p class="edu-title">JavaScript React Developer</p>
+          <p class="edu-meta">OpenClassrooms · 2022-2023</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-title">Master 1 Philosophy</p>
+          <p class="edu-meta">Université Lyon III · 2017-2019</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-title">Political Science Degree</p>
+          <p class="edu-meta">Sciences Po Lyon · 2013-2017</p>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</body>
+</html>
